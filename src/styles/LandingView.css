@@ -1,0 +1,102 @@
+header {
+    height: 700px;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url('../assets/header-bg.jpg') no-repeat left center;
+}
+
+
+.netflix-logo {
+    box-sizing: border-box;
+    color: rgb(229, 9, 20);
+    display: block;
+    fill: rgb(229, 9, 20);
+    font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+    height: 40px;
+    overflow-clip-margin: content-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-size-adjust: 100%;
+    width: 148px;
+}
+
+.header-nav {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+ margin: auto; 
+}
+
+.start-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sign-in-button {
+    background-color: rgb(229, 9, 20);
+    border: none;
+    border-radius: 10%;
+    padding-block: .4rem;
+    padding-inline: .8rem;
+    font-size: .75rem;
+    cursor: pointer;
+    transition: filter .2s ease-in-out;
+}
+
+.sign-in-button:hover {
+    filter: brightness(80%);
+}
+
+.header-welcome {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sign-in-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.ad-banner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 110px;
+    gap: 1.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: radial-gradient(51.39% 511.66% at 47.68% -217.91%, rgb(255, 153, 0) 0%, rgb(229, 9, 20) 17.27%, rgb(14, 27, 79) 79.44%, rgb(0, 4, 19) 100%);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px -8px 25px 0px;
+}
+
+
+
+.popcorn {
+    width: 55px;
+    height: 100%;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: radial-gradient(51.39% 511.66% at 47.68% -217.91%, rgb(255, 153, 0) 0%, rgb(229, 9, 20) 17.27%, rgb(14, 27, 79) 79.44%, rgb(0, 4, 19) 100%);
+    background-image: url('../assets/popcorn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+}
+
+.ad-info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+Link {
+}
+
