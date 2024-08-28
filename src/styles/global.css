@@ -1,3 +1,8 @@
+  :root {
+    background-color: black;
+    
+  }
+  
   *,
   *::before,
   *::after {
@@ -11,6 +16,12 @@
   ol {
     list-style: none;
   }
+
+  li {
+    margin: 0;               
+    padding: 0;              
+    list-style: none;     
+}
   
   /* a {
     text-decoration: none;
@@ -23,6 +34,51 @@
   select {
     font: inherit;
   }
+
+
+
+
+  /* Reset default styling for all input elements */
+input {
+  /* Reset box model */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+
+  /* Reset font and appearance */
+  font: inherit;
+  line-height: normal;
+  color: inherit;
+  background: transparent;
+
+  /* Remove default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Remove focus outline */
+  outline: none;
+}
+
+/* Optional: Reset placeholder text styling */
+input::placeholder {
+  color: inherit;
+  opacity: 1; /* Ensure the placeholder text is not faded */
+}
+
+
+  button {
+    all: unset;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color:inherit;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+
+  }
   
   img,
   video {
@@ -33,6 +89,7 @@
   
   body {
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6,
@@ -43,4 +100,35 @@
   :focus {
     outline: none;
   }
+
+  .container-1400 {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  nav {
+    margin: 0;
+}
+
+
+
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Apply flex layout to ensure correct positioning */
+.app{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

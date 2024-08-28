@@ -1,0 +1,22 @@
+.accordion {
+    max-width: 1400px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: left;
+    gap: .5rem;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    width: 60%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: dimgray;
+}
+
+.accordion-item:hover {
+    opacity: 80%;
+}
