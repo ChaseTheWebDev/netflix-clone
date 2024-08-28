@@ -1,0 +1,30 @@
+.footer {
+    max-width: 1400px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: left;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.footer-get-started-container {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.footer-main-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: left;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.link-container {
+    display: flex;
+    flex-flow: row wrap;
+}
