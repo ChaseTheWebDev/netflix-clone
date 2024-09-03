@@ -1,17 +1,14 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Dropdown from '../components/Dropdown';
 import ScrollBox from '../components/ScrollBox';
 import Accordion from '../components/accordion';
 import GetStarted from '../components/GetStarted';
 import '../styles/LandingView.css';
 
 export default function LandingView() {
-    const [language, setLanguage] = useState('English');
-
-    const handleLanguageChange = (event) => {
-        setLanguage(event.target.value);
-        console.log(event.target.value);
-    };
+    const languageOptions = ['English', 'Spanish', 'French', 'German', 'Chinese'];
+    const formatOptions = ['Movies','TV Shows'];
+    const countryOptions = ['United States', 'Global'];
 
     return (
         <div className='landing'>
@@ -31,11 +28,7 @@ export default function LandingView() {
                         </g>
                     </svg>
                     <div className="nav-sign-in-container">
-                        <input 
-                            type="text" 
-                            value={language}  
-                            onChange={handleLanguageChange} 
-                        />
+                        <Dropdown options={languageOptions} defaultOption="English" />
                         <button className='nav-sign-in-button'>Sign In</button>
                     </div>
                 </nav>
@@ -64,8 +57,8 @@ export default function LandingView() {
                     <div className='container-1400'>
                         <h4>Trending Now</h4>
                         <div className='filters-container'>
-                        <div>Country</div>
-                        <div>Movies</div>
+                            <Dropdown options={countryOptions} defaultOption='United States' />
+                            <Dropdown options={formatOptions} defaultOption='Movies' />
                         </div>
                         <ScrollBox />
                     </div>
