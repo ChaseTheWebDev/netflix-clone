@@ -28,7 +28,7 @@ export default function LandingView() {
                         </g>
                     </svg>
                     <div className="nav-sign-in-container">
-                        <Dropdown options={languageOptions} defaultOption="English" />
+                        <Dropdown options={languageOptions} defaultOption="English" type='language' />
                         <button className='nav-sign-in-button'>Sign In</button>
                     </div>
                 </nav>

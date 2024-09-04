@@ -23,11 +23,6 @@
     list-style: none;     
 }
   
-  /* a {
-    text-decoration: none;
-    color: inherit;
-  } */
-  
   input,
   button,
   textarea,
@@ -35,38 +30,25 @@
     font: inherit;
   }
 
-
-
-
-  /* Reset default styling for all input elements */
 input {
-  /* Reset box model */
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
-
-  /* Reset font and appearance */
   font: inherit;
   line-height: normal;
   color: inherit;
   background: transparent;
-
-  /* Remove default appearance */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
-  /* Remove focus outline */
   outline: none;
 }
 
-/* Optional: Reset placeholder text styling */
 input::placeholder {
   color: inherit;
-  opacity: 1; /* Ensure the placeholder text is not faded */
+  opacity: 1;
 }
-
 
   button {
     all: unset;
@@ -106,29 +88,6 @@ input::placeholder {
     margin: 0 auto;
   }
 
-  nav {
-    margin: 0;
-}
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Apply flex layout to ensure correct positioning */
-.app{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+  address {
+    display: inline;
+  }
