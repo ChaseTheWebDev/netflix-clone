@@ -2,8 +2,10 @@ import { useState, useRef, useEffect } from "react";
 import PropTypes from 'prop-types';
 import '../styles/Dropdown.css';
 import { RiArrowDropDownFill } from "react-icons/ri";
+import { HiMiniLanguage } from "react-icons/hi2";
 
-export default function Dropdown({ options, defaultOption }) {
+
+export default function Dropdown({ options, defaultOption, type }) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(defaultOption);
     const dropdownRef = useRef(null);
@@ -35,6 +37,7 @@ export default function Dropdown({ options, defaultOption }) {
     return (
         <div className="dropdown" ref={dropdownRef}>
             <div className="dropdown-header" onClick={handleToggleDropdown}>
+                {type=== 'language' ? <HiMiniLanguage /> : null}
                 {selectedOption}
                 <RiArrowDropDownFill size={24} />
             </div>
@@ -58,4 +61,5 @@ export default function Dropdown({ options, defaultOption }) {
 Dropdown.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string).isRequired,
     defaultOption: PropTypes.string.isRequired,
+    type: PropTypes.string
 };

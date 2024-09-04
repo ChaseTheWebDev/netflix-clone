@@ -1,48 +1,44 @@
+import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
+import Dropdown from './Dropdown';
 
 export default function Footer() {
+    const languageOptions = ['English', 'Spanish', 'French', 'German', 'Chinese'];
+
     return (
         <div className="footer">
-            <div className="footer-get-started-container">
-                <p>Ready to watch? Enter your email to create or restart your membership.</p>
-                <div>
-                    <input type="email" />
-                    <button>GetStarted</button>
-                </div>
-                <div className="footer-main-container">
-                    <p>Questions? Call <address>1-844-505-2993</address></p>
-                    <div className="link-container">
-                        <ul>
-                            <li>FAQ</li>
-                            <li>Investor Relations</li>
-                            <li>Buy Gift Cards</li>
-                            <li>Cookie Preferences</li>
-                            <li>Legal Notices</li>
-                        </ul>
-                        <ul>
-                            <li>Help Center</li>
-                            <li>Jobs</li>
-                            <li>Ways to Watch</li>
-                            <li>Corporate Information</li>
-                            <li>Only on Netflix</li>
-                        </ul>
-                        <ul>
-                            <li>Account</li>
-                            <li>Netflix Shop</li>
-                            <li>Terms of Use</li>
-                            <li>Contact Us</li>
-                            <li>Do Not Sell or Share My Personal Information</li>
-                        </ul>
-                        <ul>
-                            <li>Media Center</li>
-                            <li>Redeem Gift Card</li>
-                            <li>Privacy</li>
-                            <li>Speed Test</li>
-                            <li>Ad Choices</li>
-                        </ul>
-                    </div>
-                </div>
+            <p>Questions? Call <address><Link to="tel:1-844-505-2993">1-844-505-2993</Link></address></p>
+            <div className="link-container">
+                <ul>
+                    <li><Link to="/faq">FAQ</Link></li>
+                    <li><Link to="/investor-relations">Investor Relations</Link></li>
+                    <li><Link to="/buy-gift-cards">Buy Gift Cards</Link></li>
+                    <li><Link to="/cookie-preferences">Cookie Preferences</Link></li>
+                    <li><Link to="/legal-notices">Legal Notices</Link></li>
+                </ul>
+                <ul>
+                    <li><Link to="/help-center">Help Center</Link></li>
+                    <li><Link to="/jobs">Jobs</Link></li>
+                    <li><Link to="/ways-to-watch">Ways to Watch</Link></li>
+                    <li><Link to="/corporate-information">Corporate Information</Link></li>
+                    <li><Link to="/only-on-netflix">Only on Netflix</Link></li>
+                </ul>
+                <ul>
+                    <li><Link to="/account">Account</Link></li>
+                    <li><Link to="/netflix-shop">Netflix Shop</Link></li>
+                    <li><Link to="/terms-of-use">Terms of Use</Link></li>
+                    <li><Link to="/contact-us">Contact Us</Link></li>
+                    <li><Link to="/do-not-sell-or-share-my-personal-information">Do Not Sell or Share My Personal Information</Link></li>
+                </ul>
+                <ul>
+                    <li><Link to="/media-center">Media Center</Link></li>
+                    <li><Link to="/redeem-gift-card">Redeem Gift Card</Link></li>
+                    <li><Link to="/privacy">Privacy</Link></li>
+                    <li><Link to="/speed-test">Speed Test</Link></li>
+                    <li><Link to="/ad-choices">Ad Choices</Link></li>
+                </ul>
             </div>
+            <Dropdown options={languageOptions} defaultOption="English" type='language' />
         </div>
     );
 }
