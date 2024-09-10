@@ -64,12 +64,12 @@
 
 .scroll-backward-button {
     top: 50%;
-    left: 0;
+    left: -35px;
 }
 
 .scroll-forward-button {
     top: 50%;
-    right: 0;
+    right: -35px;
 }
 
 
