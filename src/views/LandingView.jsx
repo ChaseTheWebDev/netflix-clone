@@ -1,14 +1,38 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from '../components/Dropdown';
 import ScrollBox from '../components/ScrollBox';
 import Accordion from '../components/accordion';
 import GetStarted from '../components/GetStarted';
 import '../styles/LandingView.css';
+import { fetchMoviesByGenre } from '../services/api';
 
 export default function LandingView() {
+    const [trendingMovies, setTrendingMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
+
     const languageOptions = ['English', 'Spanish', 'French', 'German', 'Chinese'];
     const formatOptions = ['Movies','TV Shows'];
     const countryOptions = ['United States', 'Global'];
+
+
+    useEffect(() => {
+        const loadTrendingMovies = async () => {
+            try {
+                const genreID ='28';
+                const movies = await fetchMoviesByGenre(genreID);
+                setTrendingMovies(movies);
+            } catch (error) {
+                console.error("Failed to fetch trending movies", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        loadTrendingMovies();
+    }, []);
+
+    if (loading) return <p>Loading...</p>
+
 
     return (
         <div className='landing'>
@@ -60,7 +84,7 @@ export default function LandingView() {
                             <Dropdown options={countryOptions} defaultOption='United States' />
                             <Dropdown options={formatOptions} defaultOption='Movies' />
                         </div>
-                        <ScrollBox />
+                        <ScrollBox movieList={trendingMovies} />
                     </div>
                 </section>
                 <section className='reasons-to-join' aria-label='More Reasons To Join Section'>
