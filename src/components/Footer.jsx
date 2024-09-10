@@ -7,7 +7,7 @@ export default function Footer() {
 
     return (
         <div className="footer">
-            <p>Questions? Call <address><Link to="tel:1-844-505-2993">1-844-505-2993</Link></address></p>
+            <div className='footer-contact-info'>Questions? Call <address><Link to="tel:1-844-505-2993">1-844-505-2993</Link></address></div>
             <div className="link-container">
                 <ul>
                     <li><Link to="/faq">FAQ</Link></li>

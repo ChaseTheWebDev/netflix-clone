@@ -10,40 +10,24 @@ const apiService = axios.create({
   },
 });
 
-export const fetchMoviesByGenre = async (genreId) => {
+// Popular Movies API
+export const fetchPopularMovies = async () => {
   try {
-    const response = await apiService.get(`/discover/movie`, {
-      params: {
-        with_genres: genreId,
-      },
-    });
+    const response = await apiService.get('/movie/popular');
     return response.data.results;
   } catch (error) {
-    console.error('Error fetching movies by genre:', error);
+    console.error('Error fetching popular movies:', error);
     throw error;
   }
 };
 
-export const searchMoviesByTitle = async (title) => {
+//Popular TV Shows API
+export const fetchPopularTVShows = async () => {
   try {
-    const response = await apiService.get(`/search/movie`, {
-      params: {
-        query: title,
-      },
-    });
+    const response = await apiService.get('/tv/popular');
     return response.data.results;
   } catch (error) {
-    console.error('Error searching movies by title:', error);
-    throw error;
-  }
-};
-
-export const fetchMovieById = async (movieId) => {
-  try {
-    const response = await apiService.get(`/movie/${movieId}`);
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching movie details:', error);
+    console.error('Error fetching popular TV shows:', error);
     throw error;
   }
 };

@@ -171,7 +171,7 @@ main {background-color: black;}
 .filters-container {
     display: flex;
     flex-flow: row nowrap;
-    padding: 1rem;
+    padding-block: 1rem;
     gap: 1rem;
 }
 
@@ -193,7 +193,7 @@ main {background-color: black;}
     justify-content: left;
     align-items: center;
     gap: 2rem;
-    padding: .5rem;
+    margin-block: 1rem;
 }
 
 .info-card {
@@ -245,5 +245,4 @@ main {background-color: black;}
 
 .faq h2 {
     font-size: 2rem;
-    padding: 1rem;
 }

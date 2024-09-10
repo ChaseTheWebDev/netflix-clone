@@ -8,6 +8,10 @@
     margin-bottom: 5rem;
 }
 
+.footer-contact-info {
+    display: inline-block;
+}
+
 .link-container {
     width: 100%;
     display: flex;

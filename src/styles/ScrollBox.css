@@ -16,11 +16,17 @@
     justify-content: flex-start;
     align-items: center;
     padding: 1rem;
-    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-x: auto;
     overflow-y: visible;
-    white-space: nowrap; /* Ensure horizontal scrolling */
+    white-space: nowrap; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
+.scrollbox::-webkit-scrollbar {
+     display: none; 
+}
+  
 .movie-card {
     width: 214px; 
     height: 300px;

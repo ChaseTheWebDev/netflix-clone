@@ -5,7 +5,7 @@ import ScrollBox from '../components/ScrollBox';
 import Accordion from '../components/accordion';
 import GetStarted from '../components/GetStarted';
 import '../styles/LandingView.css';
-import { fetchMoviesByGenre } from '../services/api';
+import { fetchPopularMovies } from '../services/api';
 
 export default function LandingView() {
     const [trendingMovies, setTrendingMovies] = useState([]);
@@ -19,8 +19,7 @@ export default function LandingView() {
     useEffect(() => {
         const loadTrendingMovies = async () => {
             try {
-                const genreID ='28';
-                const movies = await fetchMoviesByGenre(genreID);
+                const movies = await fetchPopularMovies();
                 setTrendingMovies(movies);
             } catch (error) {
                 console.error("Failed to fetch trending movies", error);
