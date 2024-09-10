@@ -35,11 +35,9 @@ export default function Accordion() {
     ];
 
     const handleItemClick = (index) => {
-        // Toggle the item if it is already open; otherwise, open the clicked item
         setExpandedIndex(prevIndex => prevIndex === index ? null : index);
     };
 
-    // Function to format text into HTML paragraphs
     const formatTextToHtml = (text) => {
         const paragraphs = text.split('\n').filter(paragraph => paragraph.trim() !== '');
         return paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('');
@@ -49,9 +47,7 @@ export default function Accordion() {
         <div className="accordion">
             {items.map((item, index) => {
                 const isVisible = index === expandedIndex;
-                const formattedContent = formatTextToHtml(item.info); // Format text into HTML
-
-                // Sanitize the HTML to avoid security risks
+                const formattedContent = formatTextToHtml(item.info);
                 const sanitizedContent = DOMPurify.sanitize(formattedContent);
 
                 return (
@@ -65,12 +61,10 @@ export default function Accordion() {
                                 {isVisible ? <AiOutlineClose /> : <IoAddOutline />}
                             </span>
                         </div>
-                        {isVisible && (
-                            <div 
-                                className="accordion-item-content"
-                                dangerouslySetInnerHTML={{ __html: sanitizedContent }}
-                            />
-                        )}
+                        <div 
+                            className={`accordion-item-content ${isVisible ? 'open' : ''}`}
+                            dangerouslySetInnerHTML={{ __html: sanitizedContent }}
+                        />
                     </div>
                 );
             })}
